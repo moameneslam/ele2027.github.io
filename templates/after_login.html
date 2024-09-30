@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="content">
+            <div class="info">
+                <h1>Welcome, <span id="username">{{ user }}</span>!</h1>
+                <button type="submit" class="btn" onclick="window.location.href='/logout'">Logout</button>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+<head>
+    {% block title %}Account Settings{% endblock %}
+    <style>
+        .flash-success {
+            color: green;
+        }
+        .flash-error {
+            color: red;
+        }
+    </style>
+</head>
+
+{% block body %}
+
+    <!-- Flash messages for errors or success -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p class="flash-{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Form to update username and password -->
+    <form method="POST" action="{{ url_for('account') }}">
+        <div class="content">
+            <div class="info">
+                <h1>Account Settings</h1>
+            </div>
+            <div class="update">
+                <!-- Username field -->
+                <div class="input-box">
+                    <input type="text" name="new_username" placeholder="New Username" required>
+                </div>
+        
+                <!-- Current password field -->
+                <div class="input-box">
+                    <input type="password" name="current_password" placeholder="Current Password" required>
+                </div>
+        
+                <!-- New password field -->
+                <div class="input-box">
+                    <input type="password" name="new_password" placeholder="New Password" required>
+                </div>
+        
+                <!-- Confirm password field -->
+                <div class="input-box">
+                    <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+                </div>
+        
+                <!-- Update button -->
+                <button class="btn">Update Account</button>
+        
+                <!-- Error or success messages -->
+                <p class="error-message"> <!-- Error messages go here --></p>
+                <p class="success-message"> <!-- Success messages go here --></p>
+            </div>
+        </div>
+        
+    </form>
+{% endblock %}

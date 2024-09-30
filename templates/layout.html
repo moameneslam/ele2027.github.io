@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main> 
+        <nav class="navbar">
+            <a href="{{ url_for('after_login') }}" class="logo">ELE2027</a>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('after_login') }}">HOME</a></li>
+                <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+                <li><a href="{{ url_for('programs') }}">PROGRAMS</a></li>
+                <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+                <li><a href="{{ url_for('drive') }}">DRIVE</a></li>
+                <li><a href="https://drive.google.com/open?id=1-rvh7GC5VUSFSRdU-P9JyjDQvcL88rqP&usp=drive_fs" target="_blank">TIME TABLE</a></li>
+                <li><a href="{{ url_for('account') }}">ACCOUNT</a></li>
+            </ul>
+        </nav>
+    {% block body %}{% endblock %}
+</body>
+</html>

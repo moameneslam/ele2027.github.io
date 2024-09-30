@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}ELE2027{% endblock %}
+
+{% block body %}
+<body>
+        <div class="content">
+            <div class="info">
+                <h1>WELCOME TO ELE2027</h1>
+                <p>Our mission is to provide the best education to our students</p>
+                <a href="#" class="btn">LEARN MORE</a>
+            </div>
+
+            <div class="login-wrapper">
+                <div class="login-box">
+                    <form method="POST" action="/">
+                        <h1>Login</h1>
+                        <div class="input-box">
+                            <input type="text" name="username" placeholder="Username" required>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="password" placeholder="Password" required>
+                            <i class='bx bxs-lock-alt'></i>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Remember me</label>
+                            <a href="#">Forget password?</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}
